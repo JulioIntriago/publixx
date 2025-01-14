@@ -1,75 +1,126 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-  }
-  
-  h1, h2, h3, h4, h5 {
-    font-weight: bold;
-  }
-  
-  /* Top Contact Bar */
-  .top-bar {
-    background-color: #00274d;
-    color: white;
-    padding: 10px 0;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Top Contact Bar */
+.top-bar {
+  background-color: #00274d;
+  color: white;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 0;
+  position: relative;
+  z-index: 1050;
+}
+
+.navbar .navbar-toggler {
+  border: none;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 39, 77, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar .navbar-brand img {
+  height: 50px;
+}
+
+.navbar-nav .nav-link {
+  color: #00274d;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107;
+}
+
+.navbar .btn-warning {
+  background-color: #ffc107;
+  color: #00274d;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Hero Section */
+.hero {
+  background: url('img/elevate.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.hero .btn-warning {
+  background-color: #ffc107;
+  color: #00274d;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Overlay para oscurecer el fondo */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar .btn-warning {
     font-size: 0.9rem;
+    padding: 10px 20px;
   }
-  
-  /* Navbar */
-  .navbar {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px); /* Compatibilidad para navegadores modernos */
-    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari y iOS */
-    padding: 15px 0;
-    position: relative;
+
+  .hero h1 {
+    font-size: 2rem;
   }
-  
-  
+
+  .hero p {
+    font-size: 1rem;
+  }
+
   .navbar .navbar-brand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: none; /* Oculta el logo en pantallas pequeñas */
   }
-  
-  .navbar .navbar-brand img {
-    height: 60px;
+
+  .navbar-nav {
+    text-align: center;
   }
-  
-  .navbar-nav .nav-link {
-    color: #00274d;
-    font-weight: 500;
-    margin: 0 10px;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #ffc107;
-  }
-  
-  .navbar .btn-start {
-    background-color: #ffc107;
-    color: #00274d;
-    border: none;
-    border-radius: 20px;
-    padding: 0.5rem 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navbar .btn-start:hover {
-    background-color: #e0a800;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .navbar-nav {
-      text-align: center;
-    }
-  
-    .navbar .btn-start {
-      margin-top: 10px;
-    }
-  }
-  
+}
