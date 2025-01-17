@@ -57,6 +57,13 @@ body {
   transform: scale(1.05);
 }
 
+/* Navbar Brand Logo */
+.navbar-brand img {
+  max-width: 150px; /* Tamaño máximo del logo */
+  height: auto;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -86,7 +93,6 @@ body {
   animation: fadeIn 2s ease-in-out;
 }
 
-/* Animación de Fade-in */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -118,7 +124,6 @@ body {
   font-size: 1rem;
 }
 
-/* Animación Slide-in */
 @keyframes slideInDown {
   0% {
     transform: translateY(-50%);
@@ -133,12 +138,12 @@ body {
 /* Carrusel: Estilo de los Íconos */
 .carousel-icon {
   position: absolute;
-  top: 0px; /* Más espacio sobre la card */
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
   border-radius: 50%;
-  width: 80px; /* Tamaño más grande */
+  width: 80px;
   height: 80px;
   display: flex;
   align-items: center;
@@ -148,33 +153,30 @@ body {
 }
 
 .carousel-icon i {
-  font-size: 2.5rem; /* Íconos más grandes */
+  font-size: 2.5rem;
   color: #00274d;
 }
 
-/* Estilo General de las Cards */
 .carousel-inner .card {
   border: none;
-  border-radius: 15px; /* Bordes más redondeados */
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.575); /* Sombra más sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.575);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff; /* Fondo blanco */
+  background-color: #ffffff;
 }
 
 .carousel-inner .card:hover {
-  transform: translateY(-10px); /* Eleva la card */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Imágenes dentro de las Cards */
 .carousel-inner .card-img-top {
   width: 100%;
-  height: 220px; /* Altura ajustada para consistencia */
+  height: 220px;
   object-fit: cover;
 }
 
-/* Cuerpo de las Cards */
 .carousel-inner .card-body {
   padding: 1rem;
   text-align: center;
@@ -182,15 +184,70 @@ body {
 
 .carousel-inner .card-title {
   margin-top: 1rem;
-  font-size: 1.3rem; /* Texto más grande */
-  color: #00274d; /* Azul oscuro */
+  font-size: 1.3rem;
+  color: #00274d;
   font-weight: bold;
 }
 
-/* Controles del Carrusel */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #00274d;
   border-radius: 50%;
   padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Ocultar barra superior */
+  .top-bar {
+    display: none;
+  }
+
+  /* Ajustes del logo */
+  .navbar-brand img {
+    max-width: 100px; /* Reducir tamaño en móvil */
+    margin: 0 auto;
+  }
+
+  /* Ocultar logo cuando el menú hamburguesa está expandido */
+  .navbar-collapse.show + .navbar-brand,
+  .navbar-collapse.show ~ .navbar-brand {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Espaciado entre menú y botón */
+  .btn-warning {
+    margin-top: 10px;
+    width: 90%;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 70vh;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Carousel Adjustments */
+  .carousel-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .carousel-icon i {
+    font-size: 1.5rem;
+  }
+
+  .carousel-inner .card-img-top {
+    height: 150px;
+  }
 }
