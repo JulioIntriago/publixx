@@ -32,10 +32,6 @@ body {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 39, 77, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
 .navbar .nav-link {
   color: #00274d;
   font-weight: 500;
@@ -47,6 +43,7 @@ body {
   color: #ffc107;
 }
 
+/* Botón de la Navbar */
 .navbar .btn-warning {
   background-color: #ffc107;
   color: #00274d;
@@ -89,7 +86,7 @@ body {
   animation: fadeIn 2s ease-in-out;
 }
 
-/* Fade-in animation */
+/* Animación de Fade-in */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -121,7 +118,7 @@ body {
   font-size: 1rem;
 }
 
-/* Slide-in animation */
+/* Animación Slide-in */
 @keyframes slideInDown {
   0% {
     transform: translateY(-50%);
@@ -133,46 +130,64 @@ body {
   }
 }
 
-/* Carrusel Estilos Generales */
+/* Carrusel: Estilo de los Íconos */
 .carousel-icon {
   position: absolute;
-  top: -25px;
+  top: 0px; /* Más espacio sobre la card */
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 80px; /* Tamaño más grande */
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
+.carousel-icon i {
+  font-size: 2.5rem; /* Íconos más grandes */
+  color: #00274d;
+}
+
+/* Estilo General de las Cards */
 .carousel-inner .card {
   border: none;
-  border-radius: 10px;
+  border-radius: 15px; /* Bordes más redondeados */
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.356);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.575); /* Sombra más sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff; /* Fondo blanco */
 }
 
 .carousel-inner .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px); /* Eleva la card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
+/* Imágenes dentro de las Cards */
 .carousel-inner .card-img-top {
   width: 100%;
-  height: 300px;
+  height: 220px; /* Altura ajustada para consistencia */
   object-fit: cover;
+}
+
+/* Cuerpo de las Cards */
+.carousel-inner .card-body {
+  padding: 1rem;
+  text-align: center;
 }
 
 .carousel-inner .card-title {
   margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #00274d;
+  font-size: 1.3rem; /* Texto más grande */
+  color: #00274d; /* Azul oscuro */
+  font-weight: bold;
 }
 
+/* Controles del Carrusel */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #00274d;
