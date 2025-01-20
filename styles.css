@@ -67,7 +67,7 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  background: url('img/elevate.jpg') no-repeat center center/cover;
+  background: url('img/home.png') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -133,6 +133,56 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+}
+.carousel-icon {
+  position: absolute;
+  top: -30px; /* Ajusta el ícono encima de la tarjeta */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.carousel-icon i {
+  font-size: 2rem; /* Tamaño del ícono */
+  color: #00274d; /* Color predeterminado del ícono */
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #00274d;
+  margin-top: 10px;
+}
+
+.card-body p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin: 0;
+  text-align: center;
 }
 
 /* Carrusel: Estilo de los Íconos */
@@ -249,5 +299,203 @@ body {
 
   .carousel-inner .card-img-top {
     height: 150px;
+  }
+}
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Section: Informative Cards */
+.info-cards .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.info-cards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.info-cards .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Section: Testimonials */
+.testimonials {
+  position: relative;
+  padding-bottom: 6rem;
+}
+.testimonials blockquote {
+  font-style: italic;
+  color: #555;
+}
+.testimonials .testimonial-controls button {
+  width: 50px;
+  height: 50px;
+  border-width: 2px;
+}
+.testimonials .btn-primary {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #00274d;
+}
+.testimonials .curve-shape {
+  height: 100px;
+  clip-path: ellipse(100% 50% at 50% 100%);
+  z-index: -1;
+}
+/***** SECCIÓN: TESTIMONIOS *****/
+/* Sección de Testimonios */
+.testimonials {
+  background-color: #fdf6f0;
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-content {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.testimonial-content .quote-icon {
+  color: #ffc107;
+  margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+  font-size: 1.2rem;
+  color: #00274d;
+}
+
+.testimonial-content h5 {
+  font-size: 1.3rem;
+}
+
+.testimonial-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-carousel .btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffc107;
+}
+
+.testimonial-carousel .profiles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 3px solid #ffc107;
+  cursor: pointer;
+  transition: transform 0.3s, border 0.3s;
+}
+
+.profile-img.active {
+  transform: scale(1.2);
+  border-color: #00274d;
+}
+
+/* Curva decorativa */
+.curve-shape svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Texto del testimonio */
+.testimonials .blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #00274d; /* Azul oscuro */
+  margin-bottom: 1.5rem;
+}
+
+/* Autor del testimonio */
+.testimonials .blockquote-footer {
+  color: #00274d;
+  font-weight: bold;
+}
+
+/* Botón de reseña */
+.testimonials .btn-warning {
+  background-color: #ffc107; /* Amarillo */
+  border: none;
+  color: #00274d; /* Azul oscuro */
+  transition: transform 0.3s ease;
+}
+
+.testimonials .btn-warning:hover {
+  transform: scale(1.1); /* Efecto hover */
+  background-color: #e0a800;
+}
+
+/* Controles de navegación */
+.testimonials .testimonial-controls .btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffc107;
+  transition: all 0.3s ease;
+}
+
+.testimonials .testimonial-controls .btn-primary {
+  background-color: #ffc107; /* Activo */
+  border-color: #ffc107;
+}
+
+.testimonials .testimonial-controls .btn-outline-secondary:hover {
+  background-color: #ffc107; /* Hover en botones secundarios */
+  border-color: #ffc107;
+  color: white;
+}
+
+/* Curva decorativa inferior */
+.curve-shape svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .testimonials .blockquote {
+    font-size: 1rem;
+  }
+
+  .testimonials .testimonial-controls .btn {
+    width: 35px;
+    height: 35px;
   }
 }
