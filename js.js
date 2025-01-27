@@ -56,3 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonialItems = document.querySelectorAll(".testimonial-item");
+  testimonialItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      item.style.transform = "scale(1.02)";
+    });
+    item.addEventListener("mouseleave", () => {
+      item.style.transform = "scale(1)";
+    });
+  });
+});
