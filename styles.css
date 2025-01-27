@@ -194,10 +194,11 @@ body {
 }
 
 /* Policy Review Section */
+/* Sección: Policy Review */
 .policy-review {
   position: relative;
   background: linear-gradient(to right, rgba(0, 39, 77, 0.8), rgba(0, 39, 77, 0.6)),
-              url('img/img16.jpg') no-repeat center center/cover;
+              url('img/img9.png') no-repeat center center/cover;
   color: white;
   padding: 4rem 2rem 8rem;
   overflow: hidden;
@@ -223,8 +224,118 @@ body {
   text-align: left;
 }
 
+.policy-review .text-content h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.policy-review .text-content p {
+  line-height: 1.6;
+  color: #eaeaea;
+  margin-bottom: 2rem;
+}
+
+/* Línea decorativa */
+.vertical-line {
+  width: 5px;
+  height: auto; /* Acomoda automáticamente la altura */
+  background-color: #ffc107;
+  border-radius: 5px;
+}
+
+/* Caja de llamada a la acción */
+.policy-review .cta-box {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  color: #00274d;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  position: relative;
+}
+
+.policy-review .cta-box h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+.policy-review .cta-box h4 {
+  font-size: 1.2rem;
+  color: #00274d;
+}
+
+.policy-review .cta-box a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background: #ffc107;
+  color: #00274d;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 7px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.policy-review .cta-box a:hover {
+  background: #e0a800;
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .policy-review img {
+    max-width: 100%;
+  }
+
+  .policy-review .text-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .policy-review .text-content .vertical-line {
+    display: none; /* Oculta la línea en móviles si ocupa demasiado espacio */
+  }
+}
+
+.policy-review .content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+}
+
+.policy-review img {
+  max-width: 39%;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.policy-review .text-content {
+  max-width: 50%;
+  text-align: left;
+}
+.policy-review .line-container .vertical-line {
+  width: 5px; /* Ancho de la línea */
+  height: 50px; /* Altura de la línea */
+  background-color: #ffc107; /* Color amarillo */
+  border-radius: 5px; /* Bordes redondeados */
+}
+/* Estilo de la línea vertical */
+.vertical-line {
+  width: 5px; /* Ancho de la línea */
+  height: 100%; /* Altura completa */
+  background-color: #ffc107; /* Color amarillo */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+
 .policy-review h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
