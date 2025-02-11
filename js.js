@@ -16,6 +16,8 @@ let currentTestimonial = 0; // Índice del testimonio actual
 
 // Función para cambiar el testimonio
 function changeTestimonial(index) {
+  if (!testimonials.length) return; // Evita errores si el array está vacío
+
   if (index === -1) {
     currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
   } else if (index === 1) {
@@ -25,17 +27,18 @@ function changeTestimonial(index) {
   }
 
   const testimonial = testimonials[currentTestimonial];
-  
-  // Actualiza el texto, autor y estrellas dinámicamente
-  document.getElementById("testimonial-text").textContent = testimonial.text;
-  document.getElementById("testimonial-author").textContent = testimonial.author;
 
+  // Verifica que los elementos existen antes de actualizarlos
+  const textElement = document.getElementById("testimonial-text");
+  const authorElement = document.getElementById("testimonial-author");
   const starsContainer = document.getElementById("testimonial-stars");
-  starsContainer.innerHTML = ""; // Limpia las estrellas actuales
-  for (let i = 0; i < testimonial.stars; i++) {
-    const star = document.createElement("i");
-    star.className = "fa fa-star text-warning";
-    starsContainer.appendChild(star);
+
+  if (textElement && authorElement && starsContainer) {
+    textElement.textContent = testimonial.text;
+    authorElement.textContent = testimonial.author;
+
+    // Actualiza estrellas de manera optimizada
+    starsContainer.innerHTML = '<i class="fa fa-star text-warning"></i>'.repeat(testimonial.stars);
   }
 
   // Marca el perfil activo
@@ -44,26 +47,24 @@ function changeTestimonial(index) {
     profile.classList.toggle("active", idx === currentTestimonial);
   });
 }
+
+// Esperar a que el DOM cargue antes de ejecutar scripts
 document.addEventListener('DOMContentLoaded', () => {
+  // ✅ Navbar: Ocultar logo cuando el menú hamburguesa se expande
   const navbarToggler = document.querySelector('.navbar-toggler');
   const logo = document.getElementById('logo');
 
-  navbarToggler.addEventListener('click', () => {
-    if (navbarToggler.getAttribute('aria-expanded') === 'true') {
-      logo.style.display = 'none'; // Oculta el logo
-    } else {
-      logo.style.display = 'block'; // Muestra el logo
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
+  if (navbarToggler && logo) {
+    navbarToggler.addEventListener('click', () => {
+      const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+      logo.style.display = isExpanded ? 'none' : 'block';
+    });
+  }
+
+  // ✅ Efecto de zoom en testimonios al pasar el mouse
   const testimonialItems = document.querySelectorAll(".testimonial-item");
   testimonialItems.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      item.style.transform = "scale(1.02)";
-    });
-    item.addEventListener("mouseleave", () => {
-      item.style.transform = "scale(1)";
-    });
+    item.addEventListener("mouseenter", () => item.style.transform = "scale(1.02)");
+    item.addEventListener("mouseleave", () => item.style.transform = "scale(1)");
   });
 });
