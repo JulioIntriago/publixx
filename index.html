@@ -41,9 +41,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Claim Specialties</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
-        </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#claim-types">Claim Types</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          
+                  </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
@@ -96,7 +102,7 @@
   </div>
 </section>
   <!-- Claim Types Section -->
-  <section class="claim-types py-5" style="background-image: url('img/background.jpg'); background-size: cover; background-position: center;">
+  <section id="claim-types"class="claim-types py-5" style="background-image: url('img/background.jpg'); background-size: cover; background-position: center;">
     <div class="container text-white">
       <div class="text-center mb-4">
         <h2 class="fw-bold">CLAIM TYPES</h2>
@@ -223,7 +229,7 @@
   <section class="policy-review">
     <div class="content-wrapper">
       <!-- Imagen -->
-      <img src="img/img9.png" alt="Policy Review Team">
+      <img src="img/img16.jpg" alt="Policy Review Team">
       
       <!-- Contenido de texto -->
       <div class="text-content d-flex align-items-start gap-3">
@@ -235,15 +241,15 @@
           <p>
             To many people's surprise, having insurance does not necessarily imply that one is adequately covered by the policy. Do not wait until you have experienced a loss before realizing that this may happen to you. We are loss and policy experts, and no one is more qualified to assist you with coverage recommendations than we are.
           </p>
-          
-          <!-- Caja de llamada a la acción -->
-          <div class="cta-box">
-            <h3>LET US HELP YOU!</h3>
-            <h4>IT’S COMPLETELY FREE!</h4>
-            <a href="#">REQUEST FREE POLICY REVIEW</a>
-          </div>
         </div>
       </div>
+    </div>
+  
+    <!-- Caja de llamada a la acción (colocada afuera del content-wrapper) -->
+    <div class="cta-box">
+      <h3>LET US HELP YOU!</h3>
+      <h4>IT’S COMPLETELY FREE!</h4>
+      <a href="#">REQUEST FREE POLICY REVIEW</a>
     </div>
   </section>
   
@@ -301,11 +307,10 @@
   </div>
 </section>
 
-<!-- Testimonials Section -->
 
 <!-- Testimonials Section -->
 
-<section class="testimonials py-5">
+<section id="testimonials" class="testimonials py-5">
   <div class="container text-center">
     <!-- Carousel -->
     <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
