@@ -101,12 +101,23 @@ body {
       height: auto;
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
-    
+    /* Acelerar la apertura/cierre del menú */
+.navbar-collapse {
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Ajustar la animación de la hamburguesa */
+.navbar-toggler {
+  transition: transform 0.2s ease-in-out !important;
+}
+
     /* Ocultar logo cuando el menú hamburguesa está expandido */
     .navbar-collapse.show + .navbar-brand,
     .navbar-collapse.show ~ .navbar-brand {
       opacity: 0;
       visibility: hidden;
+      transition: opacity 0.1s ease-in-out !important;
+
     }
     
     /* Hero Section */
