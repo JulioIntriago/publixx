@@ -971,3 +971,45 @@ footer {
     height: 200px;
   }
 }
+
+/* Estilos del Modal */
+.modal-content {
+  border-radius: 10px;
+  border: 2px solid #00274d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #00274d; /* Color oscuro para el encabezado */
+  color: white;
+}
+
+.modal-body {
+  background-color: #f8f9fa; /* Fondo claro */
+}
+
+/* Botón de enviar */
+.btn-warning {
+  background-color: #ffc107;
+  color: #00274d;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+/* Bordes oscuros en los inputs */
+.form-control {
+  border: 2px solid #00274d;
+  border-radius: 8px;
+}
+
+/* Cambiar color de la "X" del botón de cerrar */
+.btn-close-white {
+  filter: invert(1);
+}

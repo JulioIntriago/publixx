@@ -57,8 +57,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#about-us">About Us</a>
           </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
           <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
+          </li>
+                    <li class="nav-item">
             <a class="btn btn-warning" href="#policy-review">Start Now</a>
           </li>
                   </ul>
@@ -367,5 +369,66 @@
       });
     });
   </script>  
+
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+  
+      let formData = new FormData(this);
+  
+      fetch("send_email.php", {
+        method: "POST",
+        body: formData,
+      })
+      .then(response => response.text())
+      .then(data => {
+        let responseMessage = document.getElementById("formResponse");
+        if (data.trim() === "success") {
+          responseMessage.innerHTML = "<span class='text-success'>Message sent successfully!</span>";
+          document.getElementById("contactForm").reset();
+        } else {
+          responseMessage.innerHTML = "<span class='text-danger'>Error sending message. Try again later.</span>";
+        }
+      })
+      .catch(error => console.error("Error:", error));
+    });
+  </script>
+  
+<!-- Modal de Contacto -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Encabezado -->
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Cuerpo del modal con el formulario -->
+      <div class="modal-body">
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold text-dark">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label fw-bold text-dark">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label fw-bold text-dark">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning w-100 fw-bold">Send Message</button>
+          <p id="formResponse" class="mt-3 text-center"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </body>
 </html>
