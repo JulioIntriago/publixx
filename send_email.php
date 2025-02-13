@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $message = htmlspecialchars($_POST["message"]);
 
-    $to = "elevateclaimadjusters@gmail.com"; // Tu correo
+    $to = "juliointriago63@gmail.com"; // Tu correo
     $subject = "New Contact Form Message from $name";
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
